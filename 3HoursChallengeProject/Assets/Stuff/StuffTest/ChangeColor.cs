@@ -9,8 +9,8 @@ public class ChangeColor : Stuff {
         Vector3.up ,
     };
     private int i = 0;
-    public override void OnClick() {
-        base.OnClick();
+    public override void OnClickDown() {
+        base.OnClickDown();
         Change();
     }
     private void Change()

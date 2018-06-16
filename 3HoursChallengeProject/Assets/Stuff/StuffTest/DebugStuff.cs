@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DebugStuff : Stuff {
     private int a = 0;
-    public override void OnClick()
+    public override void OnClickDown()
     {
-        base.OnClick();
+        base.OnClickDown();
         a++;
         Debug.Log(a);
     }

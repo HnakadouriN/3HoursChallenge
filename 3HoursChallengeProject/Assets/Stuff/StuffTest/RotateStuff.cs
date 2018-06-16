@@ -6,9 +6,9 @@ public class RotateStuff : Stuff {
     private bool isRotate = false;
     [SerializeField]
     private float Speed;
-    public override void OnClick()
+    public override void OnClickDown()
     {
-        base.OnClick();
+        base.OnClickDown();
         if (!isRotate) {
             isRotate = true;
             StartCoroutine("Rotate");

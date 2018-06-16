@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4402487881331674}
+  - component: {fileID: 114292636549142176}
+  - component: {fileID: 114920607871975244}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -150,6 +152,17 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1556139308145994}
   m_Enabled: 1
+--- !u!114 &114292636549142176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110850340972732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1045c6905234747b10b35c00c8e9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114581919592737600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,6 +227,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114920607871975244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110850340972732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3932f96541c516c4d902d8a3f38e9aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &124778075047751542
 Behaviour:
   m_ObjectHideFlags: 1

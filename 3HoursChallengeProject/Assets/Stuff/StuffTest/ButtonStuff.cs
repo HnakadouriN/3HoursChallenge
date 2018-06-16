@@ -7,29 +7,24 @@ public class ButtonStuff : Stuff {
     private GameObject[] Obj;
     [SerializeField]
     private float size;
-    public override void OnClick()
+    public override void OnClickDown()
     {
-        base.OnClick();
+        base.OnClickDown();
+        Small();
         PushButton();
+    }
+
+    public override void OnClickUp()
+    {
+        base.OnClickUp();
+        Big();
     }
 
     void PushButton()
     {
         for (int i = 0; i < Obj.Length; i++)
         {
-            Obj[i].GetComponent<Stuff>().OnClick();
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Small();
-            OnClick();
-        }
-        if (Input.GetKeyUp(KeyCode.A)) {
-            Big();
+            Obj[i].GetComponent<Stuff>().OnClickDown();
         }
     }
     void Big()
