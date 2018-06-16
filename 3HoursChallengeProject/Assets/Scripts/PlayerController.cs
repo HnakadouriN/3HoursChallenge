@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR;
 
 public class PlayerController : MonoBehaviour
 {
-
     private UnityEngine.UI.Image aim;
     private GameObject mainCamera;
+    private Stuff LookingStuff;
+    private int LookingObjID = 0;
     // Use this for initialization
     void Start()
     {
         XRSettings.enabled = false;
-
+        
         aim = this.GetComponent<UnityEngine.UI.Image>();
         mainCamera = Camera.main.gameObject;
     }
@@ -20,43 +19,52 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetStuff();
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                Stuff stuff = hit.collider.gameObject.GetComponent<Stuff>();
-                if(stuff){
-                    stuff.OnClickDown();
-                }
-            }
+            LookingStuff.OnClickDown();
         }
         if (Input.GetMouseButtonUp(0))
         {
-            Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                Stuff stuff = hit.collider.gameObject.GetComponent<Stuff>();
-                if (stuff)
-                {
-                    stuff.OnClickUp();
-                }
-            }
+            LookingStuff.OnClickUp();
         }
         if (Input.GetMouseButton(0))
         {
-            Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            LookingStuff.OnClick();
+        }
+    }
+    private void GetStuff() {
+        Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
+        RaycastHit hit;
+        Stuff hitStuff = null;
+        if (Physics.Raycast(ray, out hit))
+        {
+            hitStuff = hit.collider.gameObject.GetComponent<Stuff>();
+        }
+        CheckID(hitStuff);
+    }
+    private void CheckID(Stuff stuff) {
+        int ID = 0;
+        if (stuff) {
+            ID = stuff.GetInstanceID();
+        }
+        if (ID == LookingObjID)
+        {
+            if (LookingObjID != 0)
             {
-                Stuff stuff = hit.collider.gameObject.GetComponent<Stuff>();
-                if (stuff)
-                {
-                    stuff.OnClick();
-                }
+                LookingStuff.OnHover();
             }
+        }
+        else {
+            if (LookingObjID != 0) {
+                LookingStuff.OnHoverUp();
+            }
+            if (ID != 0)
+            {
+                stuff.OnHoverDown();
+            }
+            LookingObjID = ID;
+            LookingStuff = stuff;
         }
     }
 }

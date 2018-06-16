@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotateStuff : Stuff {
-    private bool isRotate = false;
+    //private bool isRotate = false;
     [SerializeField]
     private float Speed;
-    public override void OnClickDown()
+    public override void OnHover()
+    {
+        base.OnHover();
+        transform.localEulerAngles = transform.localEulerAngles + new Vector3(0, 0.1f, 0);
+    }
+
+    /*public override void OnClickDown()
     {
         base.OnClickDown();
         if (!isRotate) {
@@ -22,5 +28,5 @@ public class RotateStuff : Stuff {
             yield return new WaitForSeconds(1 / Speed);
         }
         isRotate = false;
-    }
+    }*/
 }
