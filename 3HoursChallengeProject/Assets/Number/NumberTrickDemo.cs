@@ -5,7 +5,8 @@ using UnityEngine;
 public class NumberTrickDemo : MonoBehaviour {
 
     private Number[] numbers;
-    public int correctNum = 1111;
+    public int correctNum;
+    public Door door;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class NumberTrickDemo : MonoBehaviour {
         if (i == correctNum)
         {
             Debug.Log("correct");
+            door.isLocked = false;
             foreach (Number num in numbers) num.isValid = false;
         }
 	}
