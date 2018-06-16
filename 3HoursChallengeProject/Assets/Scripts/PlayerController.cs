@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetStuff();
+        if (LookingObjID == 0) return;
         if (Input.GetMouseButtonDown(0))
         {
             LookingStuff.OnClickDown();
