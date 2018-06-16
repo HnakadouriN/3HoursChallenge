@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Number : Stuff {
 
+    public bool isValid = true;
+
     private Text text;
     public int i;
 
@@ -15,6 +17,7 @@ public class Number : Stuff {
 
     public override void OnClickDown()
     {
+        if (!isValid) return;
         base.OnClickDown();
         i = ++i % 10;
         text.text = i.ToString();

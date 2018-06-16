@@ -22,8 +22,7 @@ public class NumberTrickDemo : MonoBehaviour {
         if (i == correctNum)
         {
             Debug.Log("correct");
-            foreach (Number num in numbers) Destroy(num);
-            Destroy(this);
+            foreach (Number num in numbers) num.isValid = false;
         }
 	}
 }
