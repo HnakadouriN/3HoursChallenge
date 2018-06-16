@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : Stuff {
 
     [SerializeField]
-    private bool isLocked = false;
+    public bool isLocked = true;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,7 @@ public class Door : Stuff {
     public override void OnClickDown()
     {
         base.OnClickDown();
-        MoveRoom("DebugStuff");
+        MoveRoom("Result");
     }
 
     private void MoveRoom(string roomName)
