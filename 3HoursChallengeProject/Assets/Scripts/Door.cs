@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Door : Stuff {
 
+    [SerializeField]
+    private bool isLocked = true;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,6 +20,7 @@ public class Door : Stuff {
 
     private void MoveRoom(string roomName)
     {
+        if (isLocked) return;
         SceneManager.LoadScene(roomName);
     }
 }
