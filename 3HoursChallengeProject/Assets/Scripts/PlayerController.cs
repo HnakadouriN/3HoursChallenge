@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
-using UnityEngine.XR;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private UnityEngine.UI.Image aim;
+    public static Text msgWindow;
+    public static PlayerController playerController;
+    
     private GameObject mainCamera;
     private Stuff LookingStuff;
     private int LookingObjID = 0;
     // Use this for initialization
     void Start()
     {
-        XRSettings.enabled = false;
+        playerController = this;
+        msgWindow = GameObject.Find("Player/Canvas/MsgText").GetComponent<Text>();
         
-        aim = this.GetComponent<UnityEngine.UI.Image>();
         mainCamera = Camera.main.gameObject;
     }
 

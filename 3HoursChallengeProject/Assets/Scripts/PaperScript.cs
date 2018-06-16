@@ -7,8 +7,15 @@ public class PaperScript : Stuff {
 	public override void OnClickDown ()
 	{
 		base.OnClickDown ();
-		Debug.Log ("「紙に何か書いてある」");
-		Debug.Log ("「1 ２ ● ●」");
-		Debug.Log ("「所々かすれていて文字が読めない」");
+        StartCoroutine(Msg());
 	}
+
+    IEnumerator Msg()
+    {
+        MyDebug.LogOnText("「紙に何か書いてある」");
+        yield return new WaitForSeconds(2f);
+        MyDebug.LogOnText("「4 ２ ● ●」");
+        yield return new WaitForSeconds(3f);
+        MyDebug.LogOnText("「所々かすれていて文字が読めない」", 2f);
+    }
 }

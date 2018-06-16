@@ -9,7 +9,7 @@ public class RodScript : Stuff {
 	public override void OnClickDown()
 	{
 		base.OnClickDown ();
-		Debug.Log ("「長い棒を入手した　何かに使えそうだ」");
+		MyDebug.LogOnText ("「長い棒を入手した　何かに使えそうだ」", 2f);
 		RodBool = true;
 		Destroy (this.gameObject);
 	}

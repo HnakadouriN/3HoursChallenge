@@ -11,7 +11,7 @@ public class ChangeColor : Stuff {
         Color.yellow,
         Color.black,
     };
-    private int i = 0;
+    public int i = 0;
     public override void OnClickDown() {
         base.OnClickDown();
         Change();

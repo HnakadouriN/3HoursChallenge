@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: d23ae7d0a6b8c4d49ab362580464adbe,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -240,6 +241,11 @@ Prefab:
     - target: {fileID: 4402487881331674, guid: 8124f6f1006fc4304996f71b549ee175, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114966942444052486, guid: 8124f6f1006fc4304996f71b549ee175,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8124f6f1006fc4304996f71b549ee175, type: 2}
@@ -674,23 +680,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4733562730957722, guid: 2d39ef4dd16664eb886a6ad36488d1d1,
     type: 2}
   m_PrefabInternal: {fileID: 192361054}
---- !u!1 &629693240 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1052402903727326, guid: 2d39ef4dd16664eb886a6ad36488d1d1,
-    type: 2}
-  m_PrefabInternal: {fileID: 192361054}
---- !u!114 &629693241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 629693240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9206af353ad857943a1da16dd717cf1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLocked: 1
 --- !u!1001 &662300803
 Prefab:
   m_ObjectHideFlags: 0
@@ -1167,6 +1156,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d39ef4dd16664eb886a6ad36488d1d1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1201489392 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1052402903727326, guid: 2d39ef4dd16664eb886a6ad36488d1d1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1201489391}
+--- !u!114 &1201489394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201489392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e1c4a3ce4525c45aac43969836db12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 1
 --- !u!1001 &1490866399
 Prefab:
   m_ObjectHideFlags: 0
@@ -1365,13 +1371,13 @@ Prefab:
     - target: {fileID: 114016373988366330, guid: bdecffd6bae7047019c45c872cb83d75,
         type: 2}
       propertyPath: correctNum
-      value: 1234
+      value: 4210
       objectReference: {fileID: 0}
     - target: {fileID: 114016373988366330, guid: bdecffd6bae7047019c45c872cb83d75,
         type: 2}
       propertyPath: door
       value: 
-      objectReference: {fileID: 629693241}
+      objectReference: {fileID: 1201489394}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdecffd6bae7047019c45c872cb83d75, type: 2}
   m_IsPrefabParent: 0

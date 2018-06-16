@@ -15,12 +15,15 @@ public class Door : Stuff {
     public override void OnClickDown()
     {
         base.OnClickDown();
-        MoveRoom("Result");
     }
 
-    private void MoveRoom(string roomName)
+    public void MoveRoom(string roomName)
     {
-        if (isLocked) return;
+        if (isLocked)
+        {
+            MyDebug.LogOnText("「鍵がかかっているようだ」", 2f);
+            return;
+        }
         SceneManager.LoadScene(roomName);
     }
 }

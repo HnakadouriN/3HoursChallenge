@@ -10,12 +10,18 @@ public class TreasureScript : Stuff {
 	{
 		base.OnClickDown ();
 		if (keybool.KeyBool) {
-			Debug.Log ("「鍵を使って箱を開けた」");
-			Debug.Log ("「中から紙が出てきた」");
-			Debug.Log ("「● ● ３ ４」");
-			Destroy (this.gameObject);
+            StartCoroutine(Msg());
+			Destroy (this.gameObject,7f);
 		} else {
-			Debug.Log ("「鍵が掛かっていて開かない」");
+			MyDebug.LogOnText ("「鍵が掛かっていて開かない」", 2f);
 		}
 	}
+    IEnumerator Msg()
+    {
+        MyDebug.LogOnText("「鍵を使って箱を開けた」");
+        yield return new WaitForSeconds(2f);
+        MyDebug.LogOnText("「中から紙が出てきた」");
+        yield return new WaitForSeconds(2f);
+        MyDebug.LogOnText("「● ● 1 0」", 3f);
+    }
 }

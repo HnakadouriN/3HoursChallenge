@@ -12,12 +12,18 @@ public class KeyScript : Stuff {
 		base.OnClickDown ();
 		//Debug.Log ("鍵だ");
 		if (rodbool.RodBool) {
-			Debug.Log ("「棒を使って鍵を入手した」");
+			MyDebug.LogOnText ("「棒を使って鍵を入手した」", 2f);
 			KeyBool = true;
 			Destroy (this.gameObject);
 		} else {
-			Debug.Log ("「鍵に手が届かない」");
-			Debug.Log ("「何か長い物があれば取れそうだ」");
+            StartCoroutine(Msg());
 		}
 	}
+
+    IEnumerator Msg()
+    {
+        MyDebug.LogOnText("「鍵に手が届かない」");
+        yield return new WaitForSeconds(2f);
+        MyDebug.LogOnText("「何か長い物があれば取れそうだ」", 2f);
+    }
 }
