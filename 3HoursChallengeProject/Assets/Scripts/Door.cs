@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : Stuff {
 
     [SerializeField]
-    private bool isLocked = true;
+    private bool isLocked = false;
 
 	// Use this for initialization
 	void Start () {

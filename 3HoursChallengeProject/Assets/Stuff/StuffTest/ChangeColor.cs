@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeColor : Stuff {
-    private static Vector3[] ColorList = new Vector3[] {
-        Vector3.forward ,
-        Vector3.right ,
-        Vector3.up ,
+    private static Color[] ColorList = new Color[] {
+        Color.white,
+        Color.red ,
+        Color.blue,
+        Color.green,
+        Color.yellow,
+        Color.black,
     };
     private int i = 0;
     public override void OnClickDown() {
@@ -19,7 +22,6 @@ public class ChangeColor : Stuff {
         if (i == ColorList.Length) {
             i = 0;
         }
-        Vector3 vec = ColorList[i];
-        this.transform.GetComponent<MeshRenderer>().material.color = new Color(vec.x, vec.y, vec.z);
+        this.transform.GetComponent<MeshRenderer>().material.color = ColorList[i];
     }
 }
