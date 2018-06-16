@@ -13,13 +13,11 @@ public class ButtonStuff : Stuff {
         Small();
         PushButton();
     }
-
     public override void OnClickUp()
     {
         base.OnClickUp();
         Big();
     }
-
     void PushButton()
     {
         for (int i = 0; i < Obj.Length; i++)
