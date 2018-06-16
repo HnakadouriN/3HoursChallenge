@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetStuff();
+        if (!LookingStuff) {
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             LookingStuff.OnClickDown();
