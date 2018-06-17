@@ -17,6 +17,6 @@ public class ColorMatch : MonoBehaviour {
                 return;
             }
         }
-        Door.GetComponent<Door>().isLocked = false;
+        Door.GetComponent<Door>().Unlock();
 	}
 }

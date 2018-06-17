@@ -488,6 +488,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d39ef4dd16664eb886a6ad36488d1d1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &192361055 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1052402903727326, guid: 2d39ef4dd16664eb886a6ad36488d1d1,
+    type: 2}
+  m_PrefabInternal: {fileID: 192361054}
+--- !u!114 &192361056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192361055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9206af353ad857943a1da16dd717cf1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorName: door1
+  roomName: room1
+  haveKey: 0
 --- !u!1001 &233051583
 Prefab:
   m_ObjectHideFlags: 0
@@ -1169,10 +1188,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1201489392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e1c4a3ce4525c45aac43969836db12, type: 3}
+  m_Script: {fileID: 11500000, guid: 9206af353ad857943a1da16dd717cf1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  doorName: door2
+  roomName: result
+  haveKey: 0
 --- !u!1001 &1490866399
 Prefab:
   m_ObjectHideFlags: 0

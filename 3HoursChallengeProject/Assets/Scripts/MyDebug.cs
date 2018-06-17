@@ -10,6 +10,9 @@ public class MyDebug {
     {
         PlayerController.playerController.StopCoroutine("DelayMethod");
         Debug.Log(msg);
+
+        if (!PlayerController.msgWindow) return;
+
         PlayerController.msgWindow.text = msg;
     }
     public static void LogOnText(string msg, float displayTime)

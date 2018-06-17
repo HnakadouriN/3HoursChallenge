@@ -23,7 +23,7 @@ public class NumberTrickDemo : MonoBehaviour {
         if (i == correctNum)
         {
             Debug.Log("correct");
-            door.isLocked = false;
+            door.Unlock();
             foreach (Number num in numbers) num.isValid = false;
         }
 	}

@@ -227,10 +227,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 229544091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 044a91f4334e2e94ba69bbeb601bd413, type: 3}
+  m_Script: {fileID: 11500000, guid: 9206af353ad857943a1da16dd717cf1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  doorName: door1
+  roomName: room2
+  haveKey: 0
 --- !u!23 &229544093
 MeshRenderer:
   m_ObjectHideFlags: 0
