@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DebugStuff : Stuff {
-    private int a = 0;
     public override void OnClickDown()
     {
         base.OnClickDown();
