@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     
     private GameObject mainCamera;
     private Stuff LookingStuff;
+    private Stuff ClickedStuff;
     private int LookingObjID = 0;
     // Use this for initialization
     void Start()
@@ -22,20 +23,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetStuff();
-        if (!LookingStuff) {
-            return;
-        }
         if (Input.GetMouseButtonDown(0))
         {
-            LookingStuff.OnClickDown();
+            OnClickDown();
         }
         if (Input.GetMouseButtonUp(0))
         {
-            LookingStuff.OnClickUp();
+            OnClickUp();
         }
         if (Input.GetMouseButton(0))
         {
-            LookingStuff.OnClick();
+            OnClick();
         }
     }
     private void GetStuff() {
@@ -57,19 +55,42 @@ public class PlayerController : MonoBehaviour
         {
             if (LookingObjID != 0)
             {
-                LookingStuff.OnHover();
+                OnHover();
             }
         }
         else {
             if (LookingObjID != 0) {
-                LookingStuff.OnHoverUp();
+                OnHoverUp();
             }
+            LookingStuff = stuff;
+            LookingObjID = ID;
             if (ID != 0)
             {
-                stuff.OnHoverDown();
+                OnHoverDown();
             }
-            LookingObjID = ID;
-            LookingStuff = stuff;
         }
+    }
+    private void OnClickDown() {
+        if (!LookingStuff) return;
+        LookingStuff.OnClickDown();
+        ClickedStuff = LookingStuff;
+    }
+    private void OnClick() {
+        if (!ClickedStuff) return;
+        ClickedStuff.OnClick();
+    }
+    private void OnClickUp() {
+        if (!ClickedStuff) return;
+        ClickedStuff.OnClickUp();
+        ClickedStuff = null;
+    }
+    private void OnHoverDown() {
+        LookingStuff.OnHoverDown();
+    }
+    private void OnHover() {
+        LookingStuff.OnHover();
+    }
+    private void OnHoverUp() {
+        LookingStuff.OnHoverUp();
     }
 }
