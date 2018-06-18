@@ -24,4 +24,9 @@ public class LaserSwitch : Laser {
         rend.material.color = Color.white;
         on = false;
     }
+    public override void OnLaserHitting()
+    {
+        base.OnLaserHitting();
+        rend.material.color = Color.red;
+    }
 }

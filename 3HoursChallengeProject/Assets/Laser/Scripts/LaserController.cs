@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(LaserPointer))]
 public class LaserController : Stuff {
 
+    public int degree = 90;
+
     private bool mooving;
     private LaserPointer laser;
 
@@ -26,14 +28,14 @@ public class LaserController : Stuff {
         mooving = true;
         laser.emit = false;
 
-        int limit = (int)this.transform.rotation.eulerAngles.y + 90;
-        limit = limit - (limit % 90);limit %= 360;
+        int limit = (int)this.transform.rotation.eulerAngles.y + degree;
+        limit = limit - (limit % degree);limit %= 360;
         Debug.Log(limit);
 
         while (this.transform.rotation.eulerAngles.y <= limit || (limit == 0? this.transform.rotation.eulerAngles.y <= 360 && this.transform.rotation.eulerAngles.y >= 270:false))
         {
             Vector3 rot = this.transform.rotation.eulerAngles;
-            this.transform.rotation = Quaternion.Euler(rot.x, rot.y + 100 * Time.deltaTime, rot.z);
+            this.transform.rotation = Quaternion.Euler(rot.x, (int)(rot.y + 100 * Time.deltaTime), rot.z);
             Debug.Log(this.transform.rotation.eulerAngles.y);
             yield return null;
         }
