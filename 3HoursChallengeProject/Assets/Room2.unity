@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorName: door2
-  roomName: result
+  roomName: Room4
   haveKey: 0
 --- !u!1001 &1490866399
 Prefab:
