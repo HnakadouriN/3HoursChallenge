@@ -5,10 +5,13 @@ using UnityEngine;
 public class LaserPointer : MonoBehaviour {
 
     public bool emit = true;
+    private LineRenderer lr;
 
 	// Use this for initialization
 	void Start () {
-		
+        lr = this.gameObject.GetComponent<LineRenderer>();
+
+        lr.enabled = false;
 	}
 
     GameObject laserObj = null;
@@ -19,13 +22,17 @@ public class LaserPointer : MonoBehaviour {
         {
             Ray ray = new Ray(this.transform.position, this.transform.up);
             RaycastHit hit;
-            Debug.DrawRay(ray.origin, ray.direction);
+            //Debug.DrawRay(ray.origin, ray.direction);
+
 
             if (Physics.Raycast(ray, out hit))
             {
                 var tmpObj = hit.collider.gameObject;
                 var laser = tmpObj.GetComponent<Laser>();
-                Debug.DrawLine(ray.origin, hit.point, Color.red);
+                //Debug.DrawLine(ray.origin, hit.point, Color.red);
+                lr.enabled = true;
+                lr.SetPosition(0, ray.origin);
+                lr.SetPosition(1, hit.point);
 
                 if (laser)
                 {
@@ -62,6 +69,7 @@ public class LaserPointer : MonoBehaviour {
         }
         else
         {
+            lr.enabled = false;
             if (laserObj)
             {
                 laserObj.GetComponent<Laser>().OnLaserLeave();

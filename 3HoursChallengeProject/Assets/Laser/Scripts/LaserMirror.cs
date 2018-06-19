@@ -28,7 +28,7 @@ public class LaserMirror : Laser {
         base.OnLaserHitting();
         lp.transform.position = laser.hit.point;
         lp.transform.up = laser.direction + 2 * DotVec(-laser.direction, laser.hit.normal) * laser.hit.normal;
-        Debug.DrawRay(laser.hit.point, laser.hit.normal);
+        //Debug.DrawRay(laser.hit.point, laser.hit.normal);
     }
 
     private float DotVec(Vector3 a, Vector3 b)

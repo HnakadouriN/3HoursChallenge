@@ -28,5 +28,6 @@ public class LaserSwitch : Laser {
     {
         base.OnLaserHitting();
         rend.material.color = Color.red;
+        on = true;
     }
 }
